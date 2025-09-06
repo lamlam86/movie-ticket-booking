@@ -1,0 +1,134 @@
+🛣 Roadmap vừa học vừa làm – Website đặt vé xem phim (React + NestJS)
+📌 Giai đoạn 1: Nền tảng web cơ bản (1–2 tuần)
+
+👉 Mục tiêu: Làm quen với HTML, CSS, React cơ bản, NestJS cơ bản.
+
+HTML & CSS:
+
+Học cách tạo layout cơ bản (header, footer, grid, form).
+
+Tập làm 1 trang tĩnh: Trang chủ có danh sách phim (dùng dữ liệu giả hardcode).
+
+JavaScript & React:
+
+Học state, props, component.
+
+Render danh sách phim từ 1 mảng JSON tĩnh.
+
+Làm trang login (chưa cần backend).
+
+NestJS cơ bản:
+
+Học tạo project NestJS.
+
+Học tạo 1 API “Hello World” + 1 API trả về danh sách phim tĩnh.
+
+Dùng Postman test API.
+
+✅ Kết quả cuối giai đoạn: Có thể chạy 1 trang React hiển thị phim từ API NestJS (dữ liệu giả).
+
+📌 Giai đoạn 2: Làm quen với Database + API (2 tuần)
+
+👉 Mục tiêu: Biết cách lưu dữ liệu thật vào DB và kết nối frontend – backend.
+
+Database (MySQL hoặc PostgreSQL)
+
+Học khái niệm bảng, cột, khóa chính (Primary Key), khóa ngoại (Foreign Key).
+
+Tạo bảng movies (id, title, duration, poster_url...).
+
+NestJS + TypeORM
+
+Tạo kết nối DB.
+
+Viết API GET /movies để lấy danh sách phim từ DB.
+
+Viết API POST /movies để thêm phim mới (test trên Postman).
+
+React kết nối API
+
+Gọi API từ React để hiển thị phim thật từ DB.
+
+Làm form thêm phim (tạm làm trên frontend rồi gửi request API).
+
+✅ Kết quả cuối giai đoạn: CRUD phim cơ bản chạy được (thêm, xem).
+
+📌 Giai đoạn 3: Xác thực & Người dùng (1–2 tuần)
+
+👉 Mục tiêu: Biết cách đăng nhập, đăng ký, bảo vệ API.
+
+NestJS Auth
+
+Học JWT.
+
+Làm API POST /auth/register, POST /auth/login.
+
+Bảo vệ API thêm phim (chỉ admin mới thêm được).
+
+React
+
+Làm form login/register.
+
+Lưu token vào localStorage.
+
+Khi login thành công → redirect về trang chủ.
+
+✅ Kết quả cuối giai đoạn: Có thể đăng nhập và quản lý phim theo role.
+
+📌 Giai đoạn 4: Chức năng đặt vé (2–3 tuần)
+
+👉 Mục tiêu: Hoàn thiện tính năng chính.
+
+Database
+
+Bảng theaters (rạp), showtimes (suất chiếu), seats (ghế), bookings (đặt vé).
+
+Backend
+
+API lấy danh sách suất chiếu, ghế.
+
+API đặt vé (chọn ghế → lưu booking).
+
+Frontend
+
+Trang chọn suất chiếu + chọn ghế.
+
+Khi đặt vé → gửi API booking.
+
+Trang “Vé của tôi” hiển thị lịch sử đặt vé.
+
+✅ Kết quả cuối giai đoạn: Người dùng có thể đặt vé hoàn chỉnh.
+
+📌 Giai đoạn 5: Hoàn thiện + Admin Panel (1–2 tuần)
+
+👉 Mục tiêu: Làm trang quản trị và chuẩn bị báo cáo.
+
+Admin (React)
+
+Quản lý phim, suất chiếu, người dùng.
+
+Testing
+
+Test toàn bộ luồng: Đăng ký → Chọn phim → Đặt vé → Xem vé.
+
+Tối ưu
+
+CSS đẹp hơn (Tailwind hoặc Bootstrap).
+
+Viết báo cáo & chuẩn bị demo.
+
+✅ Kết quả cuối giai đoạn: Website đầy đủ tính năng đặt vé + quản trị.
+
+👨‍👩‍👧 Phân công 3 người
+
+Người 1 (Frontend chính): Học React + CSS → làm giao diện user & admin.
+
+Người 2 (Backend chính): Học NestJS + DB → làm API & auth.
+
+Người 3 (Fullstack hỗ trợ): Học cả 2, vừa làm tính năng vừa test & viết báo cáo.
+
+📌 Gợi ý học song song:
+
+Frontend học React + CSS trước, backend học NestJS + DB trước → sau 1–2 tuần sẽ có thể kết nối lại với nhau.
+
+👉 Bạn có muốn mình vẽ sơ đồ database (ERD) luôn để dễ hình dung quan hệ giữa phim – suất chiếu – ghế – đặt vé không?
