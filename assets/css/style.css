@@ -1,0 +1,110 @@
+.header__navbar{
+    display: flex; /* tro thanh flex-container de dung cac flex items */
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.header__navbar-list{
+    list-style: none; /* bo di dau cham trong list */ 
+    margin-right: 20px;
+}
+
+.header__navbar-item{
+    display: inline-block; /* cho cac khoi cua header nam tren cung 1 dong */
+}
+
+.header__navbar-item-link {
+  text-decoration: none;          
+  padding: 8px 16px;
+  background-color: transparent;  /* trong suot */
+  color: #fff;                    
+  border: 1px solid #00ff66;      /* vien xanh la */
+  border-radius: 4px;             /* bo goc */
+  transition: all 0.3s ease;      /* hiệu ứng mượt */
+}
+
+.header__navbar-item-link:hover {
+  border-bottom: 2px solid #00ff66;  /* gach xanh la khi hover */
+  background-color: rgba(0, 255, 102, 0.1); /* nen xanh nhat khi hover */
+  color: #00ff66;                      /* chu xanh la */
+}
+
+
+body {
+  background: url('../image/bg-signup.png.png') no-repeat center center fixed;
+  background-size: cover; /*keo anh cho full man hinh*/
+  color: white;
+}
+
+.login-container {
+  height: 100vh; /* full man hinh */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*form login */
+.login-box {
+  background: #fff;
+  padding : 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 350px;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input */
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Nút login */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: #00ff66;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background: #00cc52;
+}
+
+/* Register link */
+.register-text {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+}
+
+.register-text a {
+  color: #00cc52;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+.form-group{
+  color: black;
+}
+
+
