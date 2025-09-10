@@ -1,0 +1,182 @@
+/* ===== CSS RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary-green: #00cc52;
+  --primary-green-dark: #17C765;
+  --primary-green-border: #00ff66;
+  --text-dark: #333;
+  --text-light: #fff;
+  --text-gray: #666;
+  --input-border: #ccc;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== BODY ===== */
+body {
+  background: url('../image/bg-signup.png.png') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-light);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* ===== HEADER NAVBAR ===== */
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header__navbar-list {
+  list-style: none;
+  margin-right: 20px;
+}
+
+.header__navbar-item {
+  display: inline-block;
+}
+
+.header__navbar-item-link {
+  text-decoration: none;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--primary-green-border);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.header__navbar-item-link:hover {
+  border-bottom: 2px solid var(--primary-green-border);
+  background: rgba(0, 255, 102, 0.1);
+  color: var(--primary-green);
+}
+
+/* ===== CONTAINER & BOX ===== */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: var(--text-light);
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  width: 350px;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+/* ===== FORM ELEMENTS ===== */
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box input[type="email"],
+.login-box input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  font-size: 14px;
+  background: #f9f9f9;
+  color: var(--text-dark);
+  outline: none;
+  transition: border 0.2s;
+}
+
+.login-box input:focus {
+  border-color: var(--primary-green);
+}
+
+/* ===== BUTTON ===== */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-green-dark);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  background: var(--primary-green);
+}
+
+/* ===== REGISTER LINK ===== */
+.register-text {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-gray);
+}
+
+.register-text a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-decoration 0.2s;
+}
+
+.register-text a:hover,
+.register-text a:focus {
+  text-decoration: underline;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+/* ===== CHECKBOX ===== */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin: 8px 0 16px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ===== ERROR MESSAGE ===== */
+.error-message {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* ===== PHONE GROUP ===== */
+.phone-group {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-group select,
+.phone-group input {
+  flex: 1;
+  min-width: 0;
+}
