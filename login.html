@@ -1,37 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Login</title>
     <meta charset="utf-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div class="login-container">
         <div class="login-box">
-            <h2>Login to your account</h2>
-
-            <form>
+            <h2>Đăng nhập tài khoản</h2>
+            <form id="loginForm" autocomplete="off" novalidate>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email">
+                    <input type="email" id="email" name="email" placeholder="Nhập email" required>
+                    <div class="error-message" id="emailError"></div>
                 </div>
-
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required
+                        minlength="6">
+                    <div class="error-message" id="passwordError"></div>
                 </div>
+                <button type="submit" class="btn-login">Đăng nhập</button>
             </form>
-
             <p class="register-text">
-                Don't have an account?
-                <a href="signin.html">Register here</a>
+                Chưa có tài khoản?
+                <a href="signin.html">Đăng ký tại đây</a>
             </p>
         </div>
     </div>
-</body>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let valid = true;
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-</html>
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = 'Email không hợp lệ.';
+                valid = false;
+            } else {
+                document.getElementById('emailError').textContent = '';
+            }
+
+            if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Mật khẩu tối thiểu 6 ký tự.';
+                valid = false;
+            } else {
+                document.getElementById('passwordError').textContent = '';
+            }
+
+            if (valid) {
+                // Xử lý đăng nhập ở đây (gửi request, chuyển trang, ...)
+                alert('Đăng nhập thành công!');
+            }
+        });
+    </script>

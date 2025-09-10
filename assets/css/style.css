@@ -1,78 +1,113 @@
-.header__navbar{
-    display: flex; /* tro thanh flex-container de dung cac flex items */
-    justify-content: space-between;
-    padding: 20px 20px;
+/* ===== CSS RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.header__navbar-list{
-    list-style: none; /* bo di dau cham trong list */ 
-    margin-right: 20px;
+/* ===== VARIABLES ===== */
+:root {
+  --primary-green: #00cc52;
+  --primary-green-dark: #17C765;
+  --primary-green-border: #00ff66;
+  --text-dark: #333;
+  --text-light: #fff;
+  --text-gray: #666;
+  --input-border: #ccc;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.header__navbar-item{
-    display: inline-block; /* cho cac khoi cua header nam tren cung 1 dong */
+/* ===== BODY ===== */
+body {
+  background: url('../image/bg-signup.png.png') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-light);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* ===== HEADER NAVBAR ===== */
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header__navbar-list {
+  list-style: none;
+  margin-right: 20px;
+}
+
+.header__navbar-item {
+  display: inline-block;
 }
 
 .header__navbar-item-link {
-  text-decoration: none;          
+  text-decoration: none;
   padding: 8px 16px;
-  background-color: transparent;  /* trong suot */
-  color: #fff;                    
-  border: 1px solid #00ff66;      /* vien xanh la */
-  border-radius: 4px;             /* bo goc */
-  transition: all 0.3s ease;      /* hiệu ứng mượt */
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--primary-green-border);
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 .header__navbar-item-link:hover {
-  border-bottom: 2px solid #00ff66;  /* gach xanh la khi hover */
-  background-color: rgba(0, 255, 102, 0.1); /* nen xanh nhat khi hover */
-  color: #00ff66;                      /* chu xanh la */
+  border-bottom: 2px solid var(--primary-green-border);
+  background: rgba(0, 255, 102, 0.1);
+  color: var(--primary-green);
 }
 
-
-body {
-  background: url('../image/bg-signup.png.png') no-repeat center center fixed;
-  background-size: cover; /*keo anh cho full man hinh*/
-  color: white;
-}
-
+/* ===== CONTAINER & BOX ===== */
 .login-container {
-  height: 100vh; /* full man hinh */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/*form login */
 .login-box {
-  background: #fff;
-  padding : 30px 40px;
+  background: var(--text-light);
+  padding: 30px 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: var(--box-shadow);
   width: 350px;
 }
 
 .login-box h2 {
   margin-bottom: 20px;
-  color: #333;
+  color: var(--text-dark);
 }
 
-/* Input */
-.login-box input {
+/* ===== FORM ELEMENTS ===== */
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box input[type="email"],
+.login-box input[type="tel"] {
   width: 100%;
   padding: 10px;
   margin: 8px 0 16px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border);
   border-radius: 5px;
   font-size: 14px;
+  background: #f9f9f9;
+  color: var(--text-dark);
+  outline: none;
+  transition: border 0.2s;
 }
 
-/* Nút login */
+.login-box input:focus {
+  border-color: var(--primary-green);
+}
+
+/* ===== BUTTON ===== */
 .btn-login {
   width: 100%;
   padding: 12px;
-  background: #00ff66;
-  color: #fff;
+  background: var(--primary-green-dark);
+  color: var(--text-light);
   border: none;
   border-radius: 5px;
   font-size: 15px;
@@ -81,30 +116,67 @@ body {
   transition: background 0.3s;
 }
 
-.btn-login:hover {
-  background: #00cc52;
+.btn-login:hover,
+.btn-login:focus {
+  background: var(--primary-green);
 }
 
-/* Register link */
+/* ===== REGISTER LINK ===== */
 .register-text {
   margin-top: 15px;
   font-size: 14px;
   text-align: center;
-  color: #666;
+  color: var(--text-gray);
 }
 
 .register-text a {
-  color: #00cc52;
+  color: var(--primary-green);
   text-decoration: none;
   font-weight: bold;
+  transition: text-decoration 0.2s;
 }
 
-.register-text a:hover {
+.register-text a:hover,
+.register-text a:focus {
   text-decoration: underline;
 }
 
-.form-group{
-  color: black;
+/* ===== FORM GROUP ===== */
+.form-group {
+  margin-bottom: 16px;
+  color: var(--text-dark);
 }
 
+/* ===== CHECKBOX ===== */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin: 8px 0 16px;
+}
 
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ===== ERROR MESSAGE ===== */
+.error-message {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* ===== PHONE GROUP ===== */
+.phone-group {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-group select,
+.phone-group input {
+  flex: 1;
+  min-width: 0;
+}

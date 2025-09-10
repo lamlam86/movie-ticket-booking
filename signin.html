@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký tài khoản</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Tạo tài khoản mới</h2>
+      <form id="signupForm" novalidate autocomplete="off">
+        <!-- Họ và tên -->
+        <div class="form-group">
+          <label for="fullname">Họ và tên</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên" required>
+          <div class="error-message" id="fullnameError"></div>
+        </div>
+
+        <!-- Tên đăng nhập -->
+        <div class="form-group">
+          <label for="username">Tên đăng nhập</label>
+          <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
+          <div class="error-message" id="usernameError"></div>
+        </div>
+
+        <!-- Ngày sinh -->
+        <div class="form-group">
+          <label for="dob">Ngày tháng năm sinh</label>
+          <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" maxlength="10" required
+            pattern="\d{2}/\d{2}/\d{4}">
+          <div class="error-message" id="dobError"></div>
+        </div>
+
+        <!-- CCCD -->
+        <div class="form-group">
+          <label for="cccd">CCCD</label>
+          <input type="text" id="cccd" name="cccd" placeholder="Nhập số CCCD" maxlength="12" required pattern="\d{12}">
+          <div class="error-message" id="cccdError"></div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Địa chỉ Email</label>
+          <input type="email" id="email" name="email" placeholder="Nhập email" required>
+          <div class="error-message" id="emailError"></div>
+        </div>
+
+        <!-- Số điện thoại -->
+        <div class="form-group">
+          <label for="phone">Số điện thoại</label>
+          <div class="phone-group">
+            <select id="countryCode" name="countryCode" required>
+              <option value="+84">🇻🇳 +84</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+61">🇦🇺 +61</option>
+              <!-- Thêm các quốc gia khác nếu cần -->
+            </select>
+            <input type="tel" id="phone" name="phone" placeholder="Số điện thoại" required>
+          </div>
+          <div class="error-message" id="phoneError"></div>
+        </div>
+
+        <!-- Mật khẩu -->
+        <div class="form-group">
+          <label for="password">Mật khẩu</label>
+          <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required minlength="6">
+          <div class="error-message" id="passwordError"></div>
+        </div>
+
+        <!-- Xác nhận mật khẩu -->
+        <div class="form-group">
+          <label for="confirm-password">Xác nhận mật khẩu</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu" required>
+          <div class="error-message" id="confirmPasswordError"></div>
+        </div>
+
+        <!-- Đồng ý chính sách -->
+        <div class="form-group" style="margin-top:10px;">
+          <label class="checkbox-label">
+            <input type="checkbox" id="policy" required>
+            <span>
+              Tôi đồng ý với <a href="chinhsach.html" target="_blank">Chính sách bảo mật</a> và
+              <a href="dieukhoan.html" target="_blank">Điều khoản sử dụng</a>.
+            </span>
+          </label>
+          <div class="error-message" id="policyError"></div>
+        </div>
+
+        <!-- Nút submit -->
+        <button type="submit" class="btn-login">Đăng ký</button>
+      </form>
+
+      <p class="register-text">
+        Đã có tài khoản?
+        <a href="login.html">Đăng nhập tại đây</a>
+      </p>
+    </div>
+  </div>
+  <script>
+    // Helper regex
+    const regex = {
+      fullname: /^[a-zA-ZÀ-ỹ\s]{2,}$/,
+      username: /^[a-zA-Z0-9_]{4,}$/,
+      dob: /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/,
+      cccd: /^\d{12}$/,
+      email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      phoneVN: /^(0|\+84)[3-9]\d{8}$/,
+      phoneUS: /^\d{10}$/,
+      phoneJP: /^\d{10,11}$/,
+      phoneAU: /^\d{9}$/
+    };
+
+    function validatePhone(country, phone) {
+      switch (country) {
+        case '+84': return regex.phoneVN.test(phone);
+        case '+1': return regex.phoneUS.test(phone);
+        case '+81': return regex.phoneJP.test(phone);
+        case '+61': return regex.phoneAU.test(phone);
+        default: return false;
+      }
+    }
+
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      let valid = true;
+
+      // Họ tên
+      const fullname = document.getElementById('fullname').value.trim();
+      if (!regex.fullname.test(fullname)) {
+        valid = false;
+        document.getElementById('fullnameError').textContent = 'Họ và tên phải hợp lệ, tối thiểu 2 ký tự, không số.';
+      } else {
+        document.getElementById('fullnameError').textContent = '';
+      }
+
+      // Username
+      const username = document.getElementById('username').value.trim();
+      if (!regex.username.test(username)) {
+        valid = false;
+        document.getElementById('usernameError').textContent = 'Tên đăng nhập tối thiểu 4 ký tự, không dấu cách.';
+      } else {
+        document.getElementById('usernameError').textContent = '';
+      }
+
+      // Ngày sinh
+      const dob = document.getElementById('dob').value.trim();
+      if (!regex.dob.test(dob)) {
+        valid = false;
+        document.getElementById('dobError').textContent = 'Ngày sinh phải đúng định dạng dd/mm/yyyy.';
+      } else {
+        // Kiểm tra ngày hợp lệ
+        const [d, m, y] = dob.split('/').map(Number);
+        const dateObj = new Date(y, m - 1, d);
+        if (dateObj.getDate() !== d || dateObj.getMonth() !== m - 1 || dateObj.getFullYear() !== y) {
+          valid = false;
+          document.getElementById('dobError').textContent = 'Ngày sinh không hợp lệ.';
+        } else {
+          document.getElementById('dobError').textContent = '';
+        }
+      }
+
+      // CCCD
+      const cccd = document.getElementById('cccd').value.trim();
+      if (!regex.cccd.test(cccd)) {
+        valid = false;
+        document.getElementById('cccdError').textContent = 'CCCD phải đủ 12 số.';
+      } else {
+        document.getElementById('cccdError').textContent = '';
+      }
+
+      // Email
+      const email = document.getElementById('email').value.trim();
+      if (!regex.email.test(email)) {
+        valid = false;
+        document.getElementById('emailError').textContent = 'Email không hợp lệ.';
+      } else {
+        document.getElementById('emailError').textContent = '';
+      }
+
+      // Số điện thoại
+      const country = document.getElementById('countryCode').value;
+      const phone = document.getElementById('phone').value.trim();
+      if (!validatePhone(country, phone)) {
+        valid = false;
+        document.getElementById('phoneError').textContent = 'Số điện thoại không hợp lệ cho quốc gia đã chọn.';
+      } else {
+        document.getElementById('phoneError').textContent = '';
+      }
+
+      // Password
+      const password = document.getElementById('password').value;
+      if (password.length < 6) {
+        valid = false;
+        document.getElementById('passwordError').textContent = 'Mật khẩu tối thiểu 6 ký tự.';
+      } else {
+        document.getElementById('passwordError').textContent = '';
+      }
+
+      // Confirm password
+      const confirmPassword = document.getElementById('confirm-password').value;
+      if (password !== confirmPassword) {
+        valid = false;
+        document.getElementById('confirmPasswordError').textContent = 'Mật khẩu xác nhận không khớp.';
+      } else {
+        document.getElementById('confirmPasswordError').textContent = '';
+      }
+
+      // Policy
+      if (!document.getElementById('policy').checked) {
+        valid = false;
+        document.getElementById('policyError').textContent = 'Bạn phải đồng ý với chính sách.';
+      } else {
+        document.getElementById('policyError').textContent = '';
+      }
+
+      if (valid) {
+        alert('Đăng ký thành công!');
+        // Thực hiện submit hoặc chuyển trang tại đây
+        // this.submit();
+      }
+    });
+  </script>
+</body>
+
+</html>
