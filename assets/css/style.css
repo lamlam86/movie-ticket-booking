@@ -1,3 +1,12 @@
+.header {
+  position: fixed;      /* cố định header */
+  top: 0;               /* dính sát mép trên */
+  left: 0;  
+  width: 100%;          /* chiếm full chiều ngang */
+  z-index: 1000;        /* nổi lên trên cùng (tránh bị card che) */
+  background: transparent; /*trong suot*/
+}
+
 .header__navbar{
     display: flex; /* tro thanh flex-container de dung cac flex items */
     justify-content: space-between;
@@ -120,6 +129,7 @@ body {
     margin: 20px auto;
     padding: 0 15px;
     text-align: center;
+    padding-top: 100px; /* chỉnh bằng chiều cao của header */
 }
 
 .section-title{
@@ -164,3 +174,54 @@ body {
     font-size: 16px;
     color: #fff;
 }
+
+
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+  flex: 1 1 250px;
+  margin: 10px;
+}
+
+.footer h3,
+.footer h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-social a {
+  display: block;
+  color: #ccc;
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
