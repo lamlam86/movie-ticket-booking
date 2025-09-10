@@ -24,9 +24,15 @@
 }
 
 .header__navbar-item-link:hover {
-  border-bottom: 2px solid #00ff66;  /* gach xanh la khi hover */
+  border-bottom: 2px solid #17C769;  /* gach xanh la khi hover */
   background-color: rgba(0, 255, 102, 0.1); /* nen xanh nhat khi hover */
-  color: #00ff66;                      /* chu xanh la */
+  color: #17C769;                      /* chu xanh la */
+}
+
+.btn-login-nav {
+  background-color: #17C769; 
+  color: #fff;
+  border: 1px solid #17C769;
 }
 
 
@@ -59,8 +65,8 @@ body {
 
 /* Input */
 .login-box input {
-  width: 100%;
-  padding: 10px;
+  width: 90%;
+  padding: 13px;
   margin: 8px 0 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -69,9 +75,10 @@ body {
 
 /* Nút login */
 .btn-login {
-  width: 100%;
-  padding: 12px;
-  background: #00ff66;
+  display: block;     /* đảm bảo là khối riêng */
+  width: 98%;        /* full chiều ngang form */
+  padding: 14px ;
+  background: #17C769;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -79,6 +86,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 10px;   /* cách input một chút */
 }
 
 .btn-login:hover {
@@ -127,7 +135,7 @@ body {
     gap: 20px; */
     display: flex;
     flex-wrap: wrap; 
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
 }
 
