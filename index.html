@@ -7,30 +7,66 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
     <!-- the div chua toan bo web-->
     <div class="app">
         <header class="header">
-            <nav class="header__navbar">
-                <div class="header__logo">
-                    <img src="assets/image/logo.png" alt="Logo" />
-                </div>
+            <div class="header__container">
+                <nav class="header__navbar">
+                    <div class="header__logo">
+                        <img src="assets/image/logo.png" alt="Logo" />
+                    </div>
 
-                <ul class="header__navbar-list">
-                    <li class="header__navbar-item">
-                        <a class="header__navbar-item-link btn-login-nav" href="login.html">Login</a>
-                    </li>
-                    <li class="header__navbar-item">
-                        <a class="header__navbar-item-link" href="signin.html">Register</a>
-                    </li>
-                </ul>
-            </nav>
+                    <div class="header__right">
+                        <!-- Thanh tìm kiếm -->
+                        <form class="header__search" action="search.html" method="get">
+                            <input type="text" name="q" placeholder="Tìm phim, rạp" class="header__search-input">
+                            <img src="assets\image\search_icon.svg" alt="Search" class="header__search-icon">
+                            <button type="submit" class="header__search-btn" style="display: none;"></button>
+                        </form>
+
+                        <ul class="header__navbar-list">
+                            <li class="header__navbar-item">
+                                <a class="header__navbar-item-link btn-login-nav" href="login.html">Login</a>
+                            </li>
+                            <li class="header__navbar-item">
+                                <a class="header__navbar-item-link" href="signin.html">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </header>
 
         <!-- phan than -->
         <div class="container">
+            <!-- Slider -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="assets\image\banner-web.jpg" alt="Banner 1">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="assets\image\web-banner-chung.jpg" alt="Banner 2">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="banner3.jpg" alt="Banner 3">
+                    </div>
+                </div>
+
+                <!-- Nút điều hướng -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Dấu chấm chuyển slide -->
+                <div class="swiper-pagination"></div>
+            </div>
             <h2 class="section-title">Now Showing</h2>
             <div class="movies-grid">
                 <div class="movie-card">

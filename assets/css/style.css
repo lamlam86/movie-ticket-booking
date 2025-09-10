@@ -1,45 +1,34 @@
-.header {
-  position: fixed;      /* cố định header */
-  top: 0;               /* dính sát mép trên */
-  left: 0;  
-  width: 100%;          /* chiếm full chiều ngang */
-  z-index: 1000;        /* nổi lên trên cùng (tránh bị card che) */
-  background: transparent; /*trong suot*/
-}
 
-.header__navbar{
-    display: flex; /* tro thanh flex-container de dung cac flex items */
-    justify-content: space-between;
-    padding: 20px 20px;
-}
-
-.header__navbar-list{
-    list-style: none; /* bo di dau cham trong list */ 
-    margin-right: 20px;
-}
-
-.header__navbar-item{
-    display: inline-block; /* cho cac khoi cua header nam tren cung 1 dong */
+.header__navbar-item {
+  display: inline-block;
+  /* cho cac khoi cua header nam tren cung 1 dong */
 }
 
 .header__navbar-item-link {
-  text-decoration: none;          
+  text-decoration: none;
   padding: 8px 16px;
-  background-color: transparent;  /* trong suot */
-  color: #fff;                    
-  border: 1px solid #00ff66;      /* vien xanh la */
-  border-radius: 4px;             /* bo goc */
-  transition: all 0.3s ease;      /* hiệu ứng mượt */
+  background-color: transparent;
+  /* trong suot */
+  color: #fff;
+  border: 1px solid #00ff66;
+  /* vien xanh la */
+  border-radius: 4px;
+  /* bo goc */
+  transition: all 0.3s ease;
+  /* hiệu ứng mượt */
 }
 
 .header__navbar-item-link:hover {
-  border-bottom: 2px solid #17C769;  /* gach xanh la khi hover */
-  background-color: rgba(0, 255, 102, 0.1); /* nen xanh nhat khi hover */
-  color: #17C769;                      /* chu xanh la */
+  border-bottom: 2px solid #17C769;
+  /* gach xanh la khi hover */
+  background-color: rgba(0, 255, 102, 0.1);
+  /* nen xanh nhat khi hover */
+  color: #17C769;
+  /* chu xanh la */
 }
 
 .btn-login-nav {
-  background-color: #17C769; 
+  background-color: #17C769;
   color: #fff;
   border: 1px solid #17C769;
 }
@@ -47,12 +36,14 @@
 
 body {
   background: url('../image/bg-signup.png.png') no-repeat center center fixed;
-  background-size: cover; /*keo anh cho full man hinh*/
+  background-size: cover;
+  /*keo anh cho full man hinh*/
   color: white;
 }
 
 .login-container {
-  height: 100vh; /* full man hinh */
+  height: 100vh;
+  /* full man hinh */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,9 +52,9 @@ body {
 /*form login */
 .login-box {
   background: #fff;
-  padding : 30px 40px;
+  padding: 30px 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   width: 350px;
 }
 
@@ -84,9 +75,11 @@ body {
 
 /* Nút login */
 .btn-login {
-  display: block;     /* đảm bảo là khối riêng */
-  width: 98%;        /* full chiều ngang form */
-  padding: 14px ;
+  display: block;
+  /* đảm bảo là khối riêng */
+  width: 98%;
+  /* full chiều ngang form */
+  padding: 14px;
   background: #17C769;
   color: #fff;
   border: none;
@@ -95,7 +88,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
-  margin-top: 10px;   /* cách input một chút */
+  margin-top: 10px;
+  /* cách input một chút */
 }
 
 .btn-login:hover {
@@ -120,19 +114,36 @@ body {
   text-decoration: underline;
 }
 
-.form-group{
+.form-group {
   color: black;
 }
 
+/* ##################################################################################################### */
+
 .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
-    text-align: center;
-    padding-top: 100px; /* chỉnh bằng chiều cao của header */
+  max-width: 1300px;
+  margin: 20px auto;
+  padding: 0 15px;
+  text-align: center;
+  padding-top: 100px;
+  /* chỉnh bằng chiều cao của header */
 }
 
-.section-title{
+.header {
+  position: fixed;
+  /* cố định header */
+  top: 0;
+  /* dính sát mép trên */
+  left: 0;
+  width: 100%;
+  /* chiếm full chiều ngang */
+  z-index: 1000;
+  /* nổi lên trên cùng (tránh bị card che) */
+  background: #09210e;
+  /*trong suot*/
+}
+
+.section-title {
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -140,41 +151,45 @@ body {
 }
 
 .movies-grid {
-    /* display: grid;
+  /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px; */
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 30px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 .movie-card {
-    /* background: #111; 
+  /* background: #111; 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     transition: transform 0.3s; */
-    flex: 0 1 calc(33.333% - 20px); /*3 cột*/
-    max-width: 200px;
+  flex: 0 1 calc(33.333% - 20px);
+  /*3 cột*/
+  max-width: 200px;
 }
 
 .movie-card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .movie-card img {
-    width: 100%;
-    height: auto;   /* giữ nguyên tỉ lệ ảnh */
-    object-fit: contain; /* co ảnh vào khung, không cắt */
+  width: 100%;
+  height: auto;
+  /* giữ nguyên tỉ lệ ảnh */
+  object-fit: contain;
+  /* co ảnh vào khung, không cắt */
 }
 
 .movie-card h3 {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #fff;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #fff;
 }
 
+/* ############################################# */
 
 .footer {
   background: #111;
@@ -223,5 +238,122 @@ body {
   padding-top: 10px;
   font-size: 14px;
   color: #888;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+}
+
+.header__search-input {
+  padding: 8px 12px;
+  /* Tăng padding cho đồng đều */
+  height: 40px;
+  /* Đặt chiều cao cố định */
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  box-sizing: border-box;
+  /* Đảm bảo padding không làm tăng kích thước */
+}
+
+.header__search-btn,
+.header__search-icon {
+  padding: 8px 12px;
+  /* Đồng bộ padding với input */
+  height: 40px;
+  /* Đồng bộ chiều cao */
+  border: 1px solid #ccc;
+  border-left: none;
+  background: white;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  /* Đảm bảo padding không làm tăng kích thước */
+}
+
+.header__search-btn:hover,
+.header__search-icon:hover {
+  background: #00cc52;
+}
+
+/* Container chung cho header, giống với .container */
+.header__container {
+  max-width: 1200px;
+  /* bằng container của phim */
+  margin: 0 auto;
+  /* canh giữa */
+  padding: 0 15px;
+  /* thụt lề hai bên giống body */
+}
+
+/* Navbar bên trong container */
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  /* bỏ padding ngang để không bị lệch */
+}
+
+/* Nhóm bên phải */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Giới hạn chiều cao poster */
+.mySwiper {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;   /* khung rộng hơn, tùy bạn chỉnh */
+  margin: 0 auto;      /* canh giữa slider */
+  padding: 0 100px;     /* chừa chỗ hai bên cho nút điều hướng */
+  box-sizing: border-box;
+}
+.mySwiper .swiper-slide img {
+  width: 100%;
+  max-height: 400px;
+  /* Giới hạn chiều cao tối đa */
+  object-fit: contain;
+  /* Giữ toàn bộ ảnh, thay vì cắt */
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+
+.mySwiper .swiper-slide img {
+  width: 93.5%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  /* Căn giữa theo chiều dọc */
+  transform: translateY(-50%);
+  /* Điều chỉnh chính xác vị trí trung tâm */
+  z-index: 10;
+  /* Đảm bảo mũi tên nằm trên slider */
+}
+
+.swiper-button-next {
+  right: 0px;   /* nằm trong khung mySwiper */
+}
+
+.swiper-button-prev {
+  left: 0px;
 }
 
