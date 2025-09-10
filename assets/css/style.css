@@ -1,110 +1,207 @@
+/* --- Navbar --- */
 .header__navbar{
-    display: flex; /* tro thanh flex-container de dung cac flex items */
+    display: flex;
     justify-content: space-between;
     padding: 20px 20px;
 }
-
 .header__navbar-list{
-    list-style: none; /* bo di dau cham trong list */ 
+    list-style: none;
     margin-right: 20px;
 }
-
 .header__navbar-item{
-    display: inline-block; /* cho cac khoi cua header nam tren cung 1 dong */
+    display: inline-block;
 }
-
 .header__navbar-item-link {
-  text-decoration: none;          
-  padding: 8px 16px;
-  background-color: transparent;  /* trong suot */
-  color: #fff;                    
-  border: 1px solid #00ff66;      /* vien xanh la */
-  border-radius: 4px;             /* bo goc */
-  transition: all 0.3s ease;      /* hiệu ứng mượt */
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #00ff66;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
-
 .header__navbar-item-link:hover {
-  border-bottom: 2px solid #00ff66;  /* gach xanh la khi hover */
-  background-color: rgba(0, 255, 102, 0.1); /* nen xanh nhat khi hover */
-  color: #00ff66;                      /* chu xanh la */
+    border-bottom: 2px solid #00ff66;
+    background-color: rgba(0, 255, 102, 0.1);
+    color: #00ff66;
 }
 
-
+/* --- Background --- */
 body {
-  background: url('../image/bg-signup.png.png') no-repeat center center fixed;
-  background-size: cover; /*keo anh cho full man hinh*/
-  color: white;
+    background: url('../image/bg-signup.png.png') no-repeat center center fixed, radial-gradient(circle at bottom left, #0f3d2e 0%, #000 100%);
+    background-size: cover;
+    color: white;
 }
 
+/* --- Login --- */
 .login-container {
-  height: 100vh; /* full man hinh */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-/*form login */
 .login-box {
-  background: #fff;
-  padding : 30px 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  width: 350px;
+    background: #fff;
+    padding : 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 350px;
 }
-
 .login-box h2 {
-  margin-bottom: 20px;
-  color: #333;
+    margin-bottom: 20px;
+    color: #333;
 }
-
-/* Input */
 .login-box input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
 }
-
-/* Nút login */
 .btn-login {
-  width: 100%;
-  padding: 12px;
-  background: #00ff66;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
+    width: 100%;
+    padding: 12px;
+    background: #00ff66;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
 }
-
 .btn-login:hover {
-  background: #00cc52;
+    background: #00cc52;
 }
-
-/* Register link */
 .register-text {
-  margin-top: 15px;
-  font-size: 14px;
-  text-align: center;
-  color: #666;
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #666;
 }
-
 .register-text a {
-  color: #00cc52;
-  text-decoration: none;
-  font-weight: bold;
+    color: #00cc52;
+    text-decoration: none;
+    font-weight: bold;
 }
-
 .register-text a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
-
 .form-group{
-  color: black;
+    color: black;
 }
 
-
+/* --- Select Seat --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+}
+.seat-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.seat {
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    color: #222;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border: none;
+    outline: none;
+}
+.seat.selected {
+    background: #19d67c;
+    color: #fff;
+}
+.seat:disabled {
+    background: #444;
+    color: #aaa;
+    cursor: not-allowed;
+}
+.screen {
+    width: 400px;
+    height: 36px;
+    background: #fff;
+    color: #222;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 24px 0 32px 0;
+    font-size: 1.2rem;
+}
+.summary-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 80px;
+    box-sizing: border-box;
+}
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    margin-right: 48px;
+}
+.summary-label {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+.summary-value {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.actions {
+    display: flex;
+    gap: 24px;
+}
+.btn {
+    padding: 12px 36px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.btn.back {
+    background: transparent;
+    border: 2px solid #fff;
+}
+.btn.pay {
+    background: #19d67c;
+    color: #fff;
+    border: none;
+}
+.btn.pay:hover {
+    background: #16b86b;
