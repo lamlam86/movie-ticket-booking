@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ##📥 Lấy code mới nhất (mỗi ngày trước khi code)
 =======
@@ -25,3 +26,14 @@ git add .
 git commit -m "Mô tả chức năng vừa làm"
 git push origin <ten-nhanh-cua-ban>
 >>>>>>> frontend-kien
+=======
+📥 Lấy code mới nhất (mỗi ngày trước khi code)
+git checkout <ten-nhanh-cua-ban>   # chuyển sang nhánh của mình
+git fetch origin                   # lấy thông tin repo
+git pull origin main               # cập nhật code từ main
+💾 Lưu và đẩy code sau khi làm xong
+git add .
+git commit -m "Mô tả chức năng vừa làm"
+git push origin <ten-nhanh-cua-ban>
+a
+>>>>>>> 7389bf29bcaabe5d05c5d34abeeca569b7a613db
